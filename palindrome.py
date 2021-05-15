@@ -8,7 +8,8 @@ def main():
         if char != ' ':
             cleanedString += char
 
-    print(cleanedString)
+    stringList = list(cleanedString)
+    print(stringList)
 
 if __name__ == "__main__":
     main()
