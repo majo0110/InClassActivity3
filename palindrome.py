@@ -1,27 +1,20 @@
 def main():
     # Get user input and convert it to lower case.
     userInput = input("Enter your string to test for palindrome: ").lower()
+    
+    print(palindromeChecker(userInput))
 
+def palindromeChecker(userString):
     cleanedString = ''
 
     # Loop through user string and remove all the spaces in it
-    for char in userInput:
+    for char in userString:
         if char != ' ':
             cleanedString += char
 
     # Convert string into list to compare
     stringList = list(cleanedString)
 
-    isPalindrome = palindromeChecker(stringList)
-
-    print(isPalindrome)
-
-    if isPalindrome == False:
-        print("Your string is not a palindrome")
-    else:
-        print("Your string is a palindrome")
-
-def palindromeChecker(stringList):
     # Get and store length fo stringList
     stringLen = len(stringList)
 
