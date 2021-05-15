@@ -12,7 +12,9 @@ def main():
     # Convert string into list to compare
     stringList = list(cleanedString)
 
-    isPalindrome = checkPalindrome(stringList)
+    isPalindrome = palindromeChecker(stringList)
+
+    print(isPalindrome)
 
     if isPalindrome == False:
         print("Your string is not a palindrome")
