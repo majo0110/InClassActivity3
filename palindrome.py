@@ -1,14 +1,14 @@
 def main():
+    print(palindromeChecker())
+
+def palindromeChecker():
     # Get user input and convert it to lower case.
     userInput = input("Enter your string to test for palindrome: ").lower()
-    
-    print(palindromeChecker(userInput))
 
-def palindromeChecker(userString):
     cleanedString = ''
 
     # Loop through user string and remove all the spaces in it
-    for char in userString:
+    for char in userInput:
         if char != ' ':
             cleanedString += char
 
