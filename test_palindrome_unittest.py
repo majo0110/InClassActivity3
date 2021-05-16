@@ -10,7 +10,7 @@ class testCase_palindrome(unittest.TestCase):
         result = palindrome.palindromeChecker()
         self.assertEqual(result, True)
 
-    #Inputting a integer as the userInput
+    #Inputting an integer as the userInput
     intInput = 123321
     @patch('builtins.input', return_value = numberInput)
     def test_ints(self, mock_input):
@@ -44,6 +44,20 @@ class testCase_palindrome(unittest.TestCase):
     def test_string_false(self, mock_input):
         result = palindrome.palindromeChecker()
         self.assertEqual(result, False)
+
+    #Complex test case using special chars, numbers, and mix of lower/uppercase
+    complexTest = "N3RD w1ll uNdErst@nd thi$"
+    @patch('builtins.input', return_value = complexTest)
+    def test_complex(self, mock_input):
+        result = palindrome.palindromeChecker()
+        self.assertEqual(result, False)
+
+    #Complex test case using special chars, numbers, and mix of lower/uppercase
+    complexTest = "N3RD w1Ll lL1W dR3N"
+    @patch('builtins.input', return_value = complexTest)
+    def test_complex2(self, mock_input):
+        result = palindrome.palindromeChecker()
+        self.assertEqual(result, True)
 
 
 
