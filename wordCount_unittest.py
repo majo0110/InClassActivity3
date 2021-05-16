@@ -11,36 +11,36 @@ class testCase_palindrome(unittest.TestCase):
         self.assertEqual(result, 10)
 
     #Testing multiple spaces in the sentence
-    numberInput = 'hello this is me        inputting      many spaces      in the      sentence     '
-    @patch('builtins.input', return_value = numberInput)
+    manySpacesInput = 'hello this is me        inputting      many spaces      in the      sentence     '
+    @patch('builtins.input', return_value = manySpacesInput)
     def test_string_with_multiple_spaces(self, mock_input):
         result = wordCount.wordCounter()
         self.assertEqual(result, 10)
 
     #Testing with special characters
-    numberInput = '^$&*@^! &@!$^@!&*$^ !@&$@!&$^!@& $!@&$!@#*()!@#* &*( @#*())'
-    @patch('builtins.input', return_value = numberInput)
+    specialInput = '^$&*@^! &@!$^@!&*$^ !@&$@!&$^!@& $!@&$!@#*()!@#* &*( @#*())'
+    @patch('builtins.input', return_value = specialInput)
     def test_special_chars(self, mock_input):
         result = wordCount.wordCounter()
         self.assertEqual(result, 6)
 
     #Testing with special characters and uppercase/lower case letters
-    numberInput = 'h311o mY n@m3 is jon@+|-|@n'
-    @patch('builtins.input', return_value = numberInput)
+    specialInput2 = 'h311o mY n@m3 is jon@+|-|@n'
+    @patch('builtins.input', return_value = specialInput2)
     def test_special_chars_complex(self, mock_input):
         result = wordCount.wordCounter()
         self.assertEqual(result, 5)
 
     # Testing with one long word
-    numberInput = 'sjiofidfauaisdfuaidasfASDASDSDASDSDsdofuaisdfuasdklfjasdfASHDKASJDH*@jklkasdj90872329023rq2038'
-    @patch('builtins.input', return_value = numberInput)
+    oneInput = 'sjiofidfauaisdfuaidasfASDASDSDASDSDsdofuaisdfuasdklfjasdfASHDKASJDH*@jklkasdj90872329023rq2038'
+    @patch('builtins.input', return_value = oneInput)
     def test_one_word(self, mock_input):
         result = wordCount.wordCounter()
         self.assertEqual(result, 1)
 
     # Testing with no input
-    numberInput = ''
-    @patch('builtins.input', return_value = numberInput)
+    noInput = ''
+    @patch('builtins.input', return_value = noInput)
     def test_no_words(self, mock_input):
         result = wordCount.wordCounter()
         self.assertEqual(result, 0)
